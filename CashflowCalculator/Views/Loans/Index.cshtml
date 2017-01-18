@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CashflowCalculator.Models.Loan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Loans</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new Dictionary<string, object> { { "class", "btn btn-success" } })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Balance)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Term)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Balance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Term)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rate)
+        </td>
+        <td>
+            <button onclick="location.href='@Url.Action("Details", "Loans", new { id=item.Id })'" class="btn">Details</button>
+            <button onclick="location.href='@Url.Action("Edit", "Loans", new { id = item.Id })'" class="btn btn-warning">Edit</button>
+            <button onclick="location.href='@Url.Action("Delete", "Loans", new { id=item.Id })'" class="btn btn-danger">Delete</button>
+        </td>
+    </tr>
+}
+
+</table>
+
+<button onclick="location.href='@Url.Action("PoolCashflow", "Loans")'" class="btn">Calculate Pool Cashflow</button>

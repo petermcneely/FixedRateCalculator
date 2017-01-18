@@ -1,0 +1,22 @@
+﻿@model IEnumerable<CashflowCalculator.Logic.MonthDetail>
+
+<h4>Cash flow</h4>
+<hr />
+    
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Month)</th>
+        <th>@Html.DisplayNameFor(model => model.Interest)</th>
+        <th>@Html.DisplayNameFor(model => model.Principal)</th>
+        <th>@Html.DisplayNameFor(model => model.RemainingBalance)</th>
+    </tr>
+@foreach (var detail in Model)
+{
+    <tr>
+        <td>@Html.DisplayFor(modelItem => detail.Month)</td>
+        <td>@Html.DisplayFor(modelItem => detail.Interest)</td>
+        <td>@Html.DisplayFor(modelItem => detail.Principal)</td>
+        <td>@Html.DisplayFor(modelItem => detail.RemainingBalance)</td>
+    </tr>
+}
+</table>
