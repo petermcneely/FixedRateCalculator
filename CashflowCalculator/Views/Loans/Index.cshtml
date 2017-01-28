@@ -35,7 +35,7 @@
             @Html.DisplayFor(modelItem => item.Rate)
         </td>
         <td>
-            <button onclick="location.href='@Url.Action("Details", "Loans", new { id=item.Id })'" class="btn">Details</button>
+            <button onclick="location.href='@Url.Action("Details", "Loans", new { id=item.Id })'" class="btn btn-info">Details</button>
             <button onclick="location.href='@Url.Action("Edit", "Loans", new { id = item.Id })'" class="btn btn-warning">Edit</button>
             <button onclick="location.href='@Url.Action("Delete", "Loans", new { id=item.Id })'" class="btn btn-danger">Delete</button>
         </td>
@@ -44,4 +44,4 @@
 
 </table>
 
-<button onclick="location.href='@Url.Action("PoolCashflow", "Loans")'" class="btn">Calculate Pool Cashflow</button>
+<button onclick="location.href='@Url.Action("PoolCashflow", "Loans")'" class="btn btn-info">Calculate Pool Cashflow</button>
